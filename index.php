@@ -9,6 +9,13 @@
 <body>
     
 <a href="CreateExercise.html">Crie un ejercicio</a>
+<p> O segui la rotina que hiciste</p>
+<?php
+  include_once "login.php";
+ include_once "functions.php";
 
+ 
+showExercise($conn);
+?>
 </body>
 </html>
