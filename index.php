@@ -13,9 +13,32 @@
 <?php
   include_once "login.php";
  include_once "functions.php";
+ if(!@$_POST['isDeleted'])
+ {
 
- 
-showExercise($conn);
+     showExercise($conn);
+ }
 ?>
+<p>Quieres eliminar toda la tabla?</p>
+<form action="index.php" method="POST">
+    <input type="submit" name="isDeleted" value="Delete all">
+</form>
+
+<?php 
+if (@$_POST['isDeleted'])
+{
+    $query = "TRUNCATE TABLE exercises";
+    $result = $conn->query("$query");
+    if($result){
+        
+        echo "Todos los ejercicios fueron eliminados correctamente";
+    }
+
+}
+$conn->close();
+?>
+
+
+
 </body>
 </html>
