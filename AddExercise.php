@@ -1,8 +1,12 @@
 <?php
 
+// require database info
 require_once "login.php";
-$conn = new mysqli($hn,$un,$pw,$db);
+require_once "functions.php";
 
+
+
+//check errors
 if($conn->connect_error)
  {
    echo "Error in database connection";
@@ -13,7 +17,7 @@ else{
 
 $query = "DESCRIBE exercises";
 $result = $conn->query($query);
-if(!$result)
+if(!$result) //if there's no table it creates one
 {echo "No table, we're creating one for you";
 
   $query = "CREATE TABLE exercises(name VARCHAR(30),repetitions VARCHAR(2),sets VARCHAR(2))";
@@ -26,27 +30,27 @@ if(!$result)
 
   }
 }
-else{echo "There is a table already, see it?";
+//if has a table it shows the exercise
+}
+
+$name = $_POST["exerciseNameField"];
+$repetitions = $_POST["numberOfRepetitionsField"];
+$sets = $_POST["numberOfSetsField"];
+
+$query = "INSERT INTO Exercises (name, repetitions, sets)
+ VALUE('$name', '$repetitions','$sets')";
+ 
+ $result = $conn->query($query);
+ if(!$result){ echo "Error al añadir exercicio";}
+else {echo "Exercicio añadido correctamente";}
+
 showExercise($conn);
-}
-}
 
 
 
 
-function showExercise($conn)
-{
-  $query = "SELECT * FROM EXERCISES";
-  $result = $conn->query($query);
-  while($row = $result->fetch_assoc()){
-    echo $row["name"], $row["repetitions"],$row["sets"];
-  }
-  
-}
 
-
-
-
+/*   Here I making as an class, now it's all in the database. 
 
 //Defining value of properties as the value of post field
 $plank = new Exercise;
@@ -96,7 +100,7 @@ class Exercise{
 
 
   
-  /*
+ 
   class Routine {
     private $name;
 
