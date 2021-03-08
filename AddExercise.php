@@ -3,18 +3,12 @@
 // require database info
 require_once "login.php";
 require_once "functions.php";
-
-
-
 //check errors
 if($conn->connect_error)
- {
-   echo "Error in database connection";
-  }
-
+ {echo "Error in database connection";}
 else{
-// Verify if there is a table "Exercises"
 
+// Verify if there is a table "Exercises"
 $query = "DESCRIBE exercises";
 $result = $conn->query($query);
 if(!$result) //if there's no table it creates one
@@ -25,28 +19,34 @@ if(!$result) //if there's no table it creates one
   if(!$result){echo "error creating the table";}
   else {
     echo "Exercise created, want to see it?";
-    showExercise($conn);
-
-
+    
   }
-}
-//if has a table it shows the exercise
-}
+}}
+
+AddExercise($conn);
+
+
+ // This should be a function
+ // let's prepare
+
+ function AddExercise($conn)
+{
+ 
 
 $name = $_POST["exerciseNameField"];
 $repetitions = $_POST["numberOfRepetitionsField"];
 $sets = $_POST["numberOfSetsField"];
 
-$query = "INSERT INTO Exercises (name, repetitions, sets)
- VALUE('$name', '$repetitions','$sets')";
- 
- $result = $conn->query($query);
- if(!$result){ echo "Error al añadir exercicio";}
-else {echo "Exercicio añadido correctamente";}
+$stmt = $conn->prepare("INSERT INTO Exercises (name, repetitions, sets) VALUE(?,?,?)");
+ $stmt->bind_param("sss", $name, $repetitions, $sets);
+
+$stmt->execute();
+$stmt->close();
+
+}
 
 showExercise($conn);
-
-
+$conn->close();
 
 
 
