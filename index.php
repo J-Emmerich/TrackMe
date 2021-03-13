@@ -1,44 +1,45 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TrackMe - Your Gym Companion</title>
+    <title>Track Me - Your Rock Gym Companion</title>
 </head>
+
 <body>
-    
-<a href="CreateExercise.html">Crie un ejercicio</a>
-<p> O segui la rotina que hiciste</p>
+
 <?php
-  include_once "login.php";
- include_once "functions.php";
- if(!@$_POST['isDeleted'])
- {
-
-     showExercise($conn);
- }
+include "header.php";
 ?>
-<p>Quieres eliminar toda la tabla?</p>
-<form action="index.php" method="POST">
-    <input type="submit" name="isDeleted" value="Delete all">
+
+<main>
+
+<div class="main-wrapper">
+<div class="form-wrapper">
+<h1>Sign Up</h1>
+<form action="includes/signup.inc.php" method="POST">
+<input type="text" name="username" placeholder="Choose your username">
+<input type="text" name="useremail" placeholder="what's your email?">
+<input type="password" name="userpwd" placeholder="Your Password Here">
+<input type="password" name="userpwd-repeat" placeholder="Repeat our password">
+<button type="submit" name="signup-submit">Sign Up</button>
 </form>
-
-<?php 
-if (@$_POST['isDeleted'])
-{
-    $query = "TRUNCATE TABLE exercises";
-    $result = $conn->query("$query");
-    if($result){
-        
-        echo "Todos los ejercicios fueron eliminados correctamente";
-    }
-
-}
-$conn->close();
-?>
+</div>
+<div class="form-wrapper"></div>
+<h1>Login</h1>
+<form action="includes/signin.inc.php" method="POST">
+<input type="text" name="username" placeholder="Your Username">
+<input type="password" name="userpwd" placeholder="Your Password">
+<button type="submit" name="submit-login">LogIn</button>
+</form>
+</div>
 
 
-
+</main>    
 </body>
 </html>
