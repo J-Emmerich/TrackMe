@@ -39,6 +39,11 @@ else{
         //      $conn->close();
              header("location: ../index.php?login=success");
              exit();
+         }else{
+             header("location: ../index.php?login=failedWrongPassword");
+             $stmt->close();
+             $conn->close();
+             exit();
          }
           
         }else die("row error");
