@@ -35,7 +35,7 @@ include "header.php";
 <form action="includes/signin.inc.php" method="POST">
 <input type="text" name="username" placeholder="Your Username">
 <input type="password" name="userpwd" placeholder="Your Password">
-<button type="submit" name="submit-login">LogIn</button>
+<button type="submit" name="login-submit">LogIn</button>
 </form>
 </div>
 
