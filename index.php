@@ -38,7 +38,11 @@ include "header.php";
 <button type="submit" name="login-submit">LogIn</button>
 </form>
 </div>
-
+<div>
+    <form action="includes/logout.inc.php" method="POST">
+    <button type="submit" name="logout-submit">Logout</button>
+    </form>
+</div>
 
 </main>    
 </body>
