@@ -1,5 +1,31 @@
 <?php
 
+function addExercise($conn)
+{
+ 
+
+$name = $_POST["exerciseNameField"];
+$repetitions = $_POST["numberOfRepetitionsField"];
+$sets = $_POST["numberOfSetsField"];
+
+$stmt = $conn->prepare("INSERT INTO Exercises (name, repetitions, sets) VALUE(?,?,?)");
+ $stmt->bind_param("sss", $name, $repetitions, $sets);
+
+$stmt->execute();
+$stmt->close();
+
+}
+
+function deleteTable($conn)
+{
+  $query = "TRUNCATE TABLE exercises";
+    $result = $conn->query("$query");
+    $conn->close();
+    }
+
+
+
+
 // Show the exercises. 
 function showExercise($conn)
 {
@@ -24,4 +50,5 @@ function showExercise($conn)
   }
   echo "</table>";
 }
+$conn->close();
 }

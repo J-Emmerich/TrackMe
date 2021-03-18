@@ -37,7 +37,7 @@ else{
              $_SESSION['username'] = $row['username'];
              $stmt->close();
         //      $conn->close();
-             header("location: ../index.php?login=success");
+             header("location: ../dashboard.php?login=success");
              exit();
          }else{
              header("location: ../index.php?login=failedWrongPassword");
