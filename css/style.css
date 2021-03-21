@@ -1,4 +1,85 @@
-body
-{
-    background-color: cadetblue;
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+
+  body{
+      background-color: cadetblue;
+  }
+  .navbar{
+    border-width: 5px;
+    border-style: solid;
+    border-color:#333;
+  }
+.navbar,
+.navbar .container{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    
+} 
+.nav-header {
+    display: flex;
+    align-items: center;
+    
+  }
+
+
+
+
+.image-logo-wraper{
+    padding: 5px 5px 0px 5px;
+    width:20%;
+  
 }
+.image-logo-wraper img{
+    width: 100%;  
+}
+.menu-wrapper {
+    display: flex;
+    flex-basis: auto;
+    flex-grow: 1;
+    align-items: center;
+    width: 30%;
+    flex-wrap: wrap;
+
+}
+
+    .form-login-wrapper, .form-logout-wrapper {
+      margin-left: auto;
+      
+      flex-direction: row;
+      margin-bottom: 0;
+      padding-left: 0;
+      list-style: none;
+      
+      flex-basis: auto;
+      display: flex;
+    }
+.form-container,  .form-signup-wrapper form
+{
+    display: flex;
+    flex-direction: column;
+
+}
+.form-add-exercise form input, .form-add-exercise form button,
+.form-signup-wrapper form input, .form-signup-wrapper form button{
+    width: 150px;
+}
+
+.form-container, .form-signup-wrapper form{
+    align-items: center;
+}
+.form-wrapper{
+    margin-top: 30px;
+    background-color: seashell;
+    border-width: 5px;
+    border-style: solid;
+    border-color:#333;
+}
+
+ 
+    
