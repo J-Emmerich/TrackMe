@@ -5,12 +5,13 @@
   }
 
   body{
-      background-color: cadetblue;
+      background-color: #09A7A1;
   }
   .navbar{
     border-width: 5px;
     border-style: solid;
     border-color:#333;
+    margin-bottom: 20px;
   }
 .navbar,
 .navbar .container{
@@ -39,6 +40,7 @@
     width: 100%;  
 }
 .menu-wrapper {
+    
     display: flex;
     flex-basis: auto;
     flex-grow: 1;
@@ -61,8 +63,10 @@
     }
 .form-container,  .form-signup-wrapper form
 {
+    
     display: flex;
     flex-direction: column;
+    
 
 }
 .form-add-exercise form input, .form-add-exercise form button,
@@ -71,15 +75,16 @@
 }
 
 .form-container, .form-signup-wrapper form{
-    align-items: center;
+  
+    margin: auto;
 }
 .form-wrapper{
-    margin-top: 30px;
     background-color: seashell;
     border-width: 5px;
     border-style: solid;
     border-color:#333;
+    margin: auto;
 }
-
- 
-    
+.form-wrapper form input, .form-wrapper form button, .form-wrapper h1 {
+    margin: auto;
+}
