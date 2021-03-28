@@ -14,9 +14,9 @@ if(isset($_SESSION['userId']))
     <div class="form-add-exercise">';
     showExercise($conn);
 echo    '<form action="includes/addExercise.php" method="POST">
-    Name it: <input type="text" placeholder="What\'s the name of the exercise?" name="exerciseNameField">
-    Repetitions: <input type="text" placeholder="How many repetitions?" name="numberOfRepetitionsField">
-    Full set: <input type="text" placeholder="Hoy many sets of repetitions?" name="numberOfSetsField">
+    Name it: <input type="text" name="exerciseNameField"><br>
+    Repetitions: <input type="text" name="numberOfRepetitionsField"><br>
+    Full set: <input type="text" name="numberOfSetsField"><br>
     <input type="submit" name="submit-exercise" value="Añadir ejercicio">
     </form>
    </div>

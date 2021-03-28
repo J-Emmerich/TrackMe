@@ -11,7 +11,8 @@ session_start();
     <title>Track Me - Your Rock Gym Companion</title>
     
         <link rel="stylesheet" href="css/style.css" type="text/css">
-    
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet"> 
 </head>
 
 <body>

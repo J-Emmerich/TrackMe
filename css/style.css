@@ -2,17 +2,61 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    font-family: 'Roboto Mono', monospace;
   }
+ /* =========
+   Color Palette
+    #2d132c
+    #801336 
+    #c72c41
+    #ee4540
+   ========= */
+   
+   body{
+    background-color: #2d132c;
+}
+   
 
-  body{
-      background-color: #09A7A1;
-  }
-  .navbar{
+h1, p, td, th,form, input[type=submit], button[type=submit], input[type=text], input[type=password]{
+    color: #FFFFFF;
+}
+
+input[type=submit], button[type=submit], input[type=text], input[type=password]{
+    background-color: #ee4540;
+}
+
+.form-wrapper, .navbar{
+    background-color: #801336;
+ }
+/*Border Styles*/
+
+.navbar, .form-wrapper{
     border-width: 5px;
     border-style: solid;
-    border-color:#333;
+    border-color:#c72c41;
+}
+
+
+
+/* =========
+   typography
+   ========= */
+
+h1{
+    font-weight: 700;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 20px;
+    
+}
+
+/* =========
+   layout
+   ========= */
+ 
+  .navbar{
     margin-bottom: 20px;
   }
+
 .navbar,
 .navbar .container{
     width: 100%;
@@ -27,10 +71,6 @@
     align-items: center;
     
   }
-
-
-
-
 .image-logo-wraper{
     padding: 5px 5px 0px 5px;
     width:20%;
@@ -74,17 +114,23 @@
     width: 150px;
 }
 
-.form-container, .form-signup-wrapper form{
+.form-container, 
+.form-signup-wrapper form,
+ .form-wrapper, 
+ .form-wrapper form input, 
+ .form-wrapper form button, 
+ .form-wrapper h1 {
   
     margin: auto;
 }
-.form-wrapper{
-    background-color: seashell;
-    border-width: 5px;
-    border-style: solid;
-    border-color:#333;
-    margin: auto;
-}
-.form-wrapper form input, .form-wrapper form button, .form-wrapper h1 {
-    margin: auto;
-}
+
+
+/* =========
+     Table
+   ========= */
+ 
+   table, tr, td, th {
+       border-width: 2px;
+       border-color: #ee4540;
+border-style: solid;
+   }

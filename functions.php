@@ -37,9 +37,9 @@ function showExercise($conn)
       echo "
       <table>
       <tr>
-      <td> Name of the Exercise </td>
-      <td> Number of Repetitions </td>
-      <td> Number of Sets to Complete Routine </td></tr>";
+      <th> Exercise </th>
+      <th> Repetitions </th>
+      <th> Number of Sets</th></tr>";
   
   while($row = $result->fetch_assoc()){
     echo "<tr>";  
