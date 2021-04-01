@@ -22,34 +22,38 @@ include "header.php";
 ?>
 
 <main>
+<div class="main-container">
 
-<?php
+    <?php
  if (!isset($_SESSION['userId']))
  {
-     echo '<div class="form-container">
-<div class="form-wrapper">
+     echo '
+     
+     <div class="form-container">
+     
      <h1>Not a Member yet? Sign Up</h1>
-     <div class="form-signup-wrapper">
+     
      
      <form action="includes/signup.inc.php" method="POST">
-     <input type="text" name="username" placeholder="Choose your username">
-     <input type="text" name="useremail" placeholder="whats your email?">
-     <input type="password" name="userpwd" placeholder="Your Password Here">
-     <input type="password" name="userpwd-repeat" placeholder="Repeat our password">
+     <input type="text" name="username" placeholder="Your username">
+     <input type="text" name="useremail" placeholder="Your email">
+     <input type="password" name="userpwd" placeholder="Your Password">
+     <input type="password" name="userpwd-repeat" placeholder="Repeat your password">
      <button type="submit" name="signup-submit">Sign Up</button>
      </form>
+     
      </div>
-     </div>
-     </div>';
+     
+     ';
     }
     else{
         include "dashboard.php";
     }
+    ?>
+  </div>
+  </main>
+  <?php
+include "footer.php";
 ?>
-
-<p> 
-</p>
-
-</main>    
 </body>
 </html>

@@ -1,9 +1,5 @@
-* {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    font-family: 'Roboto Mono', monospace;
-  }
+
+ 
  /* =========
    Color Palette
     #2d132c
@@ -12,8 +8,16 @@
     #ee4540
    ========= */
    
-   body{
+  body{
     background-color: #2d132c;
+
+}
+.main-container{
+    width: 100%;
+    min-height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
    
 
@@ -25,12 +29,12 @@ input[type=submit], button[type=submit], input[type=text], input[type=password]{
     background-color: #ee4540;
 }
 
-.form-wrapper, .navbar{
+.form-container, nav{
     background-color: #801336;
  }
 /*Border Styles*/
 
-.navbar, .form-wrapper{
+nav, .form-container{
     border-width: 5px;
     border-style: solid;
     border-color:#c72c41;
@@ -50,80 +54,53 @@ h1{
 }
 
 /* =========
-   layout
+   layout navBar
    ========= */
- 
-  .navbar{
-    margin-bottom: 20px;
-  }
 
-.navbar,
-.navbar .container{
-    width: 100%;
+nav {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+    padding: 0px 20px;
     
-} 
-.nav-header {
-    display: flex;
-    align-items: center;
-    
-  }
-.image-logo-wraper{
-    padding: 5px 5px 0px 5px;
-    width:20%;
-  
 }
-.image-logo-wraper img{
-    width: 100%;  
-}
-.menu-wrapper {
-    
-    display: flex;
-    flex-basis: auto;
-    flex-grow: 1;
-    align-items: center;
-    width: 30%;
+.menu-wrapper{
     flex-wrap: wrap;
-
 }
-
-    .form-login-wrapper, .form-logout-wrapper {
-      margin-left: auto;
-      
-      flex-direction: row;
-      margin-bottom: 0;
-      padding-left: 0;
-      list-style: none;
-      
-      flex-basis: auto;
-      display: flex;
-    }
-.form-container,  .form-signup-wrapper form
-{
-    
+.logo-container{
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    padding: 0 5px;
+    gap: 10px;
+}
+
+img{
+    width: 80px;
+    display: block;
+}
+
+/* =========
+   layout form
+   ========= */
+
+.form-container{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    
+}
+.form-container form{
+    display: flex;
+    flex-flow: column wrap;
+    padding-bottom: 5px;
+}
+
+.main-container form button{
+    align-self: stretch; 
     
 
 }
-.form-add-exercise form input, .form-add-exercise form button,
-.form-signup-wrapper form input, .form-signup-wrapper form button{
-    width: 150px;
-}
-
-.form-container, 
-.form-signup-wrapper form,
- .form-wrapper, 
- .form-wrapper form input, 
- .form-wrapper form button, 
- .form-wrapper h1 {
-  
-    margin: auto;
-}
-
 
 /* =========
      Table
